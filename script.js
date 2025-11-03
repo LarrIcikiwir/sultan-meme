@@ -16,16 +16,20 @@ const captions = [
 ];
 
 function updateCarousel() {
-  slides.style.transform = `translateX(${-index * 100}%)`;
+  const slideWidth = slides.clientWidth;
+  slides.style.transform = `translateX(${-index * slideWidth}px)`;
+
   document.querySelectorAll('.dot').forEach((d, i) => {
     d.classList.toggle('active', i === index);
   });
+
   subtitle.style.opacity = 0;
   setTimeout(() => {
     subtitle.textContent = captions[index];
     subtitle.style.opacity = 1;
   }, 300);
 }
+
 
 // buat titik navigasi
 images.forEach((_, i) => {
