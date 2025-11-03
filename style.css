@@ -45,16 +45,19 @@ h1 {
 .slides {
   display: flex;
   transition: transform 0.6s ease;
+  width: 100%;
 }
 
 .slides img {
+  flex: 0 0 100%;
   width: 100%;
-  max-height: 90vh; /* lebih tinggi agar tidak terpotong */
+  max-height: 90vh;
   object-fit: contain;
   border-radius: 15px;
   cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s;
 }
+
 
 /* Efek hover */
 .slides img:hover {
