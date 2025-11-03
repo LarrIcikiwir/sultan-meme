@@ -3,15 +3,16 @@ const images = document.querySelectorAll('.slides img');
 const prev = document.getElementById('prev');
 const next = document.getElementById('next');
 const dotsContainer = document.getElementById('dots');
-const title = document.getElementById('title');
 const subtitle = document.getElementById('subtitle');
 
 let index = 0;
+
+// Teks tiap foto
 const captions = [
-  "Foto 1 - Sultan Sikap Lilin",
-  "Foto 2 - Sultan Nonton Hent**",
-  "Foto 3 - Sultan Saltoan Kudus",
-  "Foto 4 - Sultan Ketawa Karir"
+  "Sultan sikap lilin",
+  "Sultan nonton hent**",
+  "Sultan tendang langit",
+  "Sultan ketawa karir"
 ];
 
 function updateCarousel() {
@@ -19,7 +20,11 @@ function updateCarousel() {
   document.querySelectorAll('.dot').forEach((d, i) => {
     d.classList.toggle('active', i === index);
   });
-  subtitle.textContent = captions[index];
+  subtitle.style.opacity = 0;
+  setTimeout(() => {
+    subtitle.textContent = captions[index];
+    subtitle.style.opacity = 1;
+  }, 300);
 }
 
 // buat titik navigasi
@@ -44,7 +49,7 @@ next.addEventListener('click', () => {
   updateCarousel();
 });
 
-// swipe gesture
+// swipe gesture (mobile)
 let startX = 0;
 slides.addEventListener('touchstart', e => startX = e.touches[0].clientX);
 slides.addEventListener('touchend', e => {
