@@ -30,6 +30,7 @@ h1 {
 .subtitle {
   color: #ffd6b3;
   margin-top: 5px;
+  transition: opacity 0.4s ease;
 }
 
 .carousel {
@@ -48,13 +49,14 @@ h1 {
 
 .slides img {
   width: 100%;
-  max-height: 90vh; /* lebih tinggi */
-  object-fit: contain; /* agar tidak terpotong */
+  max-height: 90vh; /* lebih tinggi agar tidak terpotong */
+  object-fit: contain;
   border-radius: 15px;
   cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
+/* Efek hover */
 .slides img:hover {
   transform: scale(1.03);
   box-shadow: 0 0 25px rgba(255, 122, 0, 0.6),
@@ -69,6 +71,7 @@ h1 {
   100% { filter: brightness(1); }
 }
 
+/* Tombol navigasi */
 .controls {
   display: flex;
   justify-content: space-between;
@@ -96,6 +99,7 @@ button:hover {
   background: rgba(255, 122, 0, 0.4);
 }
 
+/* Titik navigasi */
 .dots {
   position: absolute;
   bottom: 10px;
